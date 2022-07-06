@@ -35,7 +35,7 @@ nav {
     align-items: center
 }
 
-.nav a {
+.nav  {
     display: inline-block;
     padding: 10px 15px;
     text-decoration: none;
