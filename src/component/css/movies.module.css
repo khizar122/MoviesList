@@ -1,0 +1,98 @@
+/* ======================================
+Responsive Image gallery Style rules
+======================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  padding: 40px 5%;
+}
+
+.headingtext {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #222322;
+}
+
+.headingtext span {
+  font-weight: 100;
+}
+
+/* Responsive image gallery rules begin*/
+
+.imagegallery {
+  /* Mobile first */
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+
+
+}
+
+.imagegallery .column {
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+
+
+}
+
+.imageitem img {
+  width: 100%;
+  border-radius: 5px;
+  height: 100%;
+
+
+}
+
+@media only screen and (min-width: 768px) {
+  .image-gallery {
+    flex-direction: row;
+
+  }
+}
+
+/* overlay styles */
+
+.imageitem {
+  position: relative;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(57, 57, 57, 0.502);
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transition: all 0.2s 0.1s ease-in-out;
+  color: #fff;
+  /* center overlay content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* hover */
+.imageitem:hover .overlay {
+  transform: scale(1);
+}
+input[type=text] {
+  float: right;
+  padding: 6px;
+  margin: 10px;
+
+  font-size: 17px;
+}
