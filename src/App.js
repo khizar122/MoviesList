@@ -6,6 +6,9 @@ import Login from './component/Login';
 import ErrorComp from './component/ErrorComp';
 import About from './component/About';
 import Contact from './component/Contact';
+import Register from './component/Register';
+import { UserAuthContextProvider } from './Context/UserAuthContext';
+import ProtectedRoute from './component/ProtectedRoute';
 
 
 function App() {
@@ -17,16 +20,21 @@ function App() {
 
       <Router>
 
+<UserAuthContextProvider>
         <Routes>
 
-          <Route path='/' element={<Home/>}></Route>
+          <Route path='/' element={<Login/>}></Route>
+          <Route path='/home' element={<ProtectedRoute>
+            <Home></Home>
+            </ProtectedRoute>}></Route>
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/about' element={<About></About>}></Route>
           <Route path='/contact' element={<Contact></Contact>}></Route>
+          <Route path='/signup' element={<Register></Register>}></Route>
           <Route path='*' element={<ErrorComp/>}></Route>
 
         </Routes>
-
+        </UserAuthContextProvider>
       </Router>
 
     </div>
