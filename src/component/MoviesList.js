@@ -5,7 +5,7 @@ import classes from './css/movies.module.css'
 
 const MoviesList = () => {
   const [val, setVal] = useState("");
-  const [queryfromtxt, setqueryfromtxt] = useState("just");
+  const [queryfromtxt, setqueryfromtxt] = useState("jam");
   const [movies, setMovie] = useState([])
  
  
@@ -20,10 +20,8 @@ const MoviesList = () => {
     if (e.key === "Enter") {
       handleTrack();
     }
-  };
- 
-
-
+  };  
+   
   useEffect(() => {
     axios.get(`https://www.omdbapi.com/?s=${queryfromtxt}&apikey=53f17266`)
       .then((response) => {

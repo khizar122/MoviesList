@@ -2,6 +2,7 @@ import React from 'react'
 
 import styles from './css/nav.module.css'
 import logo from './images/logo.png'
+import {Link}  from 'react-router-dom'
 
 
 const NavBar = () => {
@@ -10,16 +11,19 @@ const NavBar = () => {
         <nav >
        
         <img src={logo} alt="Logo" />
-        
-        
-
         <ul className={styles.links}>
-
-
-          <li className={styles.nav}>SignIn </li>
-          <li className={styles.nav}> Premium</li>
-          <li className={styles.nav}>About Us</li>
-          <li className={styles.nav}>Contact Us</li>
+          <li className={styles.nav}>
+            <Link to="/login" style={{ textDecoration: 'none',color:'black' }}>SignIn</Link>
+            </li>
+          <li className={styles.nav}> 
+          <Link to='/register' style={{ textDecoration: 'none',color:'black' }}>Register</Link>
+          </li>
+          <li className={styles.nav}>
+            <Link to='/about' style={{ textDecoration: 'none' ,color:'black'}}>About Us</Link>
+            </li>
+          <li className={styles.nav}>
+            <Link to='/contact' style={{ textDecoration: 'none',color:'black' }}>Contact Us</Link>
+          </li>
         </ul>
       </nav>
 
